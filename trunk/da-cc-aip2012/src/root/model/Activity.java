@@ -3,10 +3,12 @@ package root.model;
 import java.io.Serializable;
 
 import org.slim3.datastore.Attribute;
+import org.slim3.datastore.Model;
 import org.slim3.datastore.ModelRef;
 
 import com.google.appengine.api.datastore.Key;
 
+@Model
 public class Activity implements Serializable{
 
     private static final long serialVersionUID = 6199425495827121935L;
@@ -25,13 +27,17 @@ public class Activity implements Serializable{
     @Attribute(lob = true)
     private String description;
     
-    /*Relationships*/
+    /*1 to 1 relationship between activity and project*/
     private ModelRef<Project> projectRef = new ModelRef<Project>(Project.class);
     
     public ModelRef<Project> getModelRef(){
         return projectRef;
     }
 
+    public ModelRef<Project> getProjectRef(){
+        return projectRef;
+    }
+    
     /*Setters and getters*/
     public Key getKey() {
         return key;

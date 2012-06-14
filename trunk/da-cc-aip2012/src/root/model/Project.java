@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.InverseModelListRef;
+import org.slim3.datastore.Model;
 
 import com.google.appengine.api.datastore.Key;
 
+@Model
 public class Project implements Serializable {
 
     private static final long serialVersionUID = 5634517710947521127L;
@@ -25,13 +27,15 @@ public class Project implements Serializable {
     @Attribute(lob = true)
     private String documentation;
 
-    /*Relationship between Activity and Project*/
+    /*many to one relationship between Activity and Project*/
+    @Attribute(persistent = false)
     private InverseModelListRef<Activity, Project> activityRef =
         new InverseModelListRef<Activity, Project>(
             Activity.class,
             "projectRef",
             this);
 
+    /*Getters and setters*/
     public Key getKey() {
         return key;
     }
