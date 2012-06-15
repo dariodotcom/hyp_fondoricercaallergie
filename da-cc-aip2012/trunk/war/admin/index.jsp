@@ -46,9 +46,9 @@
 			</p>
 			<p>
 				<label for="linked_project">Linked Project</label>
-				<select id="linkedProject" name="linked_project">
+				<select id="linked_project" name="linked_project">
 						<c:forEach items="${projects}" var="project">
-							<option value="${project.key}">${project.name}</option>
+							<option value="${f:h(project.key)}">${f:h(project.name)}</option>
 						</c:forEach>
 				</select>
 			</p>
