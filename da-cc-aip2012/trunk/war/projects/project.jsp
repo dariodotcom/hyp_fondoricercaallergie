@@ -6,13 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>projects Project</title>
+<title>${f:h(project.name)} | Projects</title>
 </head>
 <body>
 
-	<h2>Your text:</h2>
-	<p><%= request.getParameter("text") %></p>
+	<h1>${f:h(project.name)}</h1>
+	<h2>Informations:</h2>
+	<p>${f:h(project.generalInfo)}</p>
+	<h2>Documentation:</h2>
+	<p>${f:h(project.documentation)}</p>
 	
-
 </body>
 </html>

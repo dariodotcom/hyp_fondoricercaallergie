@@ -9,6 +9,14 @@
 <title>projects Index</title>
 </head>
 <body>
-<p>Hello projects Index !!!</p>
+	<h3>Project list:</h3>
+	<ul>
+		<c:forEach items="${projects}" var="project">
+			<li><b>${f:h(project.name)}</b> (<a
+				href="/projects/project?id=${f:h(project.key)}">View</a>)
+			</li>
+		</c:forEach>
+	</ul>
+
 </body>
 </html>

@@ -10,6 +10,7 @@ public class CreateProjectController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
+        System.out.println("Create controller");
         String projectName = asString("project_name");
         String projectInfo = asString("project_info");
         String projectDocumention = asString("project_documentation");
@@ -18,7 +19,10 @@ public class CreateProjectController extends Controller {
         project.setName(projectName);
         project.setGeneralInfo(projectInfo);
         project.setDocumentation(projectDocumention);
+        
         ProjectService.put(project);
+        
+        System.out.println(project.getKey());
         
         return forward("/admin/");
     }
