@@ -9,6 +9,13 @@
 <title>Index</title>
 </head>
 <body>
-<p>Hello Index !!!</p>
+	<h2>Project list:</h2>
+	<p>
+		<a href="/projects/">list</a>
+	</p>
+	<h2>Activity list:</h2>
+	<p>
+		<a href="/activities/">list</a>
+	</p>
 </body>
 </html>

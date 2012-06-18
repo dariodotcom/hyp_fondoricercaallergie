@@ -12,9 +12,13 @@
 	<h1>List of activities:</h1>
 	<ul>
 		<c:forEach items="${activities}" var="activity">
-			<li>${f:h(activity.name)} (<a href="/activities/activity?id=${f:h(activity.key)}">view</a>)</li>
+			<li>${f:h(activity.name)} (<a
+				href="/activities/activity?id=${f:h(activity.key)}">view</a>)
+			</li>
 		</c:forEach>
 	</ul>
-	
+	<br>
+	<br>
+	<a href="/">Home</a>
 </body>
 </html>

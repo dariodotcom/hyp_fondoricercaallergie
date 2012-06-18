@@ -15,6 +15,9 @@
 	<h2>Description:</h2>
 	<p>${f:h(activity.description)}</p>
 	<h2>Linked project:</h2>
-	<a href="/">${f:h(linkedProject.name)}</a>
+	<a href="/projects/project?id=${f:h(linkedProject.key)}">${f:h(linkedProject.name)}</a>
+	<br>
+	<br>
+	<a href="/">Home</a>
 </body>
 </html>
