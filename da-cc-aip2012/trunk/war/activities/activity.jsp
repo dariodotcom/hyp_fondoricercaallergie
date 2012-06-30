@@ -22,13 +22,7 @@
 					<li>Voce 3</li>
 					<li>Voce 4</li>
 				</ul>
-				<h4>Transition links:</h4>
-				<ul>
-					<li>Voce 1</li>
-					<li>Voce 2</li>
-					<li>Voce 3</li>
-					<li>Voce 4</li>
-				</ul>
+	
 			</div>
 			
 			<div id="content">

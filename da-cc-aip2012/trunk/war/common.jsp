@@ -1,4 +1,3 @@
-<%@page import="sun.org.mozilla.javascript.internal.WrapFactory"%>
 <%@page pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -13,6 +12,7 @@
 		return "	<title>"
 				+ title
 				+ "</title>\n"
+				+ "	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>\n"
 				+ "	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/global.css\"/>\n"
 				+ "	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />";
 	}
@@ -46,4 +46,11 @@
 	String header(String context) {
 
 		return "header: " + context;
-	}%>
+	}
+	
+	String linkList(String title){
+		return "";
+	}
+	
+	
+	%>
