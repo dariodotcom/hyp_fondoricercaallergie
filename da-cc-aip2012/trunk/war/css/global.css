@@ -1,45 +1,87 @@
 @CHARSET "utf-8";
 
-body { background-color: #EEEEEE; }
-
-h1 { 
-	height: 33px;
-	font-size: x-large;
-	font-family: "Times New Roman", Times, serif;
+/*General stuff*/
+body{
+	font-family: tahoma, arial, sans-serif;
+}
+	
+#container{
+	width: 980px;
+	margin: 0 auto !important;
 }
 
-ul li { list-style: square; }
-a:hover { background-color: white; }
-
-input.err { background-color: orange; }
-
-#header{
- width:760px;
- background-color: orange;
+#banner{
+	width: 980px;
+	height: 70px;
+	padding: 10px 0;
+	font-family: tahoma, arial, sans-serif;
+	font-size: 45px;
+	font-variant: small-caps;
+	text-align: center;
+	color: #222222;
 }
 
+#main,
+#landmarks{
+	width: 980px;
+}
+
+.column{
+	width: 180px;
+	padding: 0 10px;
+	font-size: 14px;
+}
+
+#left{
+	float: left;
+	clear: left;
+}
+
+#right{
+	float: right;
+}
+
+#content{
+	width: 550px;
+	float: left;
+	padding: 0 15px !important;
+	font-size: 14px;
+	text-align: justify;
+}
+
+/*Menu*/
 #menu{
- width:160px;
- height:400px;
- text-align:left;
- vertical-align: top;
- float:left;
- background-color: aqua;
+	width: 980px;
+	height: 24px;
+	padding: 2px 0;
+	border-top: 2px solid #222222;
+	border-bottom: 2px solid #222222;
 }
 
-#body{
- width:600px;
- height:400px;
- float:left;
- background-color: white;
+#menu > .menu_entry{
+	float: left;
+	margin-right: 2px;
+	background-color: black;
+	list-style: none;
 }
 
-#footer{
- width:760px;
- text-align:left;
- background-color: black;
- color: white;
- clear: left;
+#menu > .menu_entry[selected="true"]{
+	background-color: white !important;
 }
 
+#menu > .menu_entry > a{
+	line-height: 24px;
+	padding: 2px 10px;
+	color: white;
+	font-size: 18px;
+	font-variant: small-caps;
+	text-decoration: none;
+}
 
+#menu > .menu_entry[selected="true"] > a{
+	color: black;
+}
+
+#menu > .menu_entry:not([selected="true"]):hover > a {
+	text-decoration: underline;
+}
