@@ -22,7 +22,7 @@
 					<li>Voce 3</li>
 					<li>Voce 4</li>
 				</ul>
-				<h4>Progetto collegato:</h2>
+				<h4>Progetto collegato:</h4>
 				<ul>
 					<li><a href="/projects/project?id=${f:h(linkedProject.key)}">${f:h(linkedProject.name)}</a></li>
 				</ul>
