@@ -22,7 +22,10 @@
 					<li>Voce 3</li>
 					<li>Voce 4</li>
 				</ul>
-	
+				<h4>Progetto collegato:</h2>
+				<ul>
+					<li><a href="/projects/project?id=${f:h(linkedProject.key)}">${f:h(linkedProject.name)}</a></li>
+				</ul>
 			</div>
 			
 			<div id="content">
@@ -31,8 +34,6 @@
 				<p>${f:h(activity.generalInfo)}</p>
 				<h2>Description:</h2>
 				<p>${f:h(activity.description)}</p>
-				<h2>Linked project:</h2>
-				<a href="/projects/project?id=${f:h(linkedProject.key)}">${f:h(linkedProject.name)}</a>
 				<br>
 				<br>
 			</div>

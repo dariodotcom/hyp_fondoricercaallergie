@@ -22,12 +22,13 @@
 					<li>Voce 3</li>
 					<li>Voce 4</li>
 				</ul>
-				<h4>Transition links:</h4>
+				<h4>Attività collegate:</h2>
 				<ul>
-					<li>Voce 1</li>
-					<li>Voce 2</li>
-					<li>Voce 3</li>
-					<li>Voce 4</li>
+					<c:forEach items="${linkedActivities}" var="activity">
+						<li>${f:h(activity.name)} (<a
+							href="/activities/activity?id=${f:h(activity.key)}">View</a>)
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
 			
@@ -37,17 +38,6 @@
 				<p>${f:h(project.generalInfo)}</p>
 				<h2>Documentation:</h2>
 				<p>${f:h(project.documentation)}</p>
-				<br />
-				<h2>Linked activities:</h2>
-				<ul>
-					<c:forEach items="${linkedActivities}" var="activity">
-						<li>${f:h(activity.name)} (<a
-							href="/activities/activity?id=${f:h(activity.key)}">View</a>)
-						</li>
-					</c:forEach>
-				</ul>
-				<br>
-				<br>
 			</div>
 			
 			<div id="right" class="column">
