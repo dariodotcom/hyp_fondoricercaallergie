@@ -24,16 +24,12 @@
 					boolean viewDoc = view != null && view.equals("doc");
 				%>
 				<ul>
-					<li selected="<%=!viewDoc%>">
-						<a href="/projects/project?id=${f:h(project.key)}">
-							Informazioni generali
-						</a>
-					</li>
-					<li selected="<%=viewDoc%>">
-						<a href="/projects/project?id=${f:h(project.key)}&view=doc">
-							Documentazione
-						</a>
-					</li>
+					<li selected="<%=!viewDoc%>"><a
+						href="/projects/project?id=${f:h(project.key)}"> Informazioni
+							generali </a></li>
+					<li selected="<%=viewDoc%>"><a
+						href="/projects/project?id=${f:h(project.key)}&view=doc">
+							Documentazione </a></li>
 
 				</ul>
 				<h4>Attività collegate:</h4>
@@ -60,8 +56,33 @@
 				</c:choose>
 			</div>
 
-			<div id="right" class="column"></div>
-
+			<div id="right" class="column">
+				<c:if test="${groupNav != null}">
+					<h4>${groupNavName}</h4>
+					<c:choose>
+						<c:when test="${groupNavPrev != null }">
+							<p>
+								<a href="/projects/project?id=${f:h(groupNavPrev.key)}">&lt;&lt;
+									Progetto precedente</a>
+							</p>
+						</c:when>
+						<c:otherwise>
+							<p class="disabled_link">&lt;&lt; Progetto precedente</p>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${groupNavNext != null }">
+							<p>
+								<a href="/projects/project?id=${f:h(groupNavNext.key)}">&gt;&gt;
+									Progetto successivo</a>
+							</p>
+						</c:when>
+						<c:otherwise>
+							<p class="disabled_link">&gt;&gt; Progetto successivo</p>
+						</c:otherwise>
+					</c:choose>
+				</c:if>
+			</div>
 		</div>
 	</div>
 </body>

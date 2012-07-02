@@ -2,6 +2,8 @@ package root.controller.projects;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
 
@@ -29,6 +31,38 @@ public class ProjectController extends Controller {
         List<Activity> linkedActivities =
             project.getActivityRef().getModelList();
         requestScope("linkedActivities", linkedActivities);
+
+        /* Group navigation management */
+        HttpSession session = request.getSession();
+        String navType = (String) session.getAttribute("groupNav");
+        if (navType.equals("all")) {
+            List<Project> list = ProjectService.getProjectList();
+            int index = list.indexOf(project);
+            Project prev, next;
+            
+            try{
+                prev = list.get(index - 1);
+                System.out.println("prev project: " + prev.getName());
+            }catch(IndexOutOfBoundsException ioe){
+                prev = null;
+            }
+            
+            try{
+                next = list.get(index + 1);
+                System.out.println("next project: " + next.getName());
+            }catch(IndexOutOfBoundsException ioe){
+                next = null;
+            }
+            
+            if(prev != null || next != null){
+                requestScope("groupNav", "all");
+                requestScope("groupNavName", session.getAttribute("groupNavName"));
+                requestScope("groupNavIndex", session.getAttribute("GroupNavIndex"));
+                requestScope("groupNavPrev", prev);
+                requestScope("groupNavNext", next);
+            }   
+        }
+        
         return forward("project.jsp");
     }
 }

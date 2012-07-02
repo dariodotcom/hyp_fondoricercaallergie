@@ -1,3 +1,4 @@
+<%@page import="com.google.appengine.api.urlfetch.HTTPRequest"%>
 <%@page pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -47,4 +48,13 @@
 
 	String linkList(String title) {
 		return "";
+	}
+
+	String makeLink(String url, String text, String tooltip, boolean enabled) {
+		if (!enabled) {
+			return "<span class=\"disabled_link\">" + text + "</span>";
+		} else {
+			String format = "<a href=\"%s\" alt=\"%s\">%s</a>";
+			return String.format(format, url, tooltip, text);
+		}
 	}%>

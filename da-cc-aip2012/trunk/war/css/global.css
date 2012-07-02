@@ -14,10 +14,14 @@ a:not([selected="true"]):hover{
 	text-decoration: underline;	
 }
 
-.hint{
+p.hint{
 	color: #555555;
 	font-style: italic;
 	font-size: 12px;
+}
+
+p.disabled_link{
+	color: #CCCCCC;
 }
 
 #container{
