@@ -2,17 +2,18 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
-<%@include file="/common.jsp" %>
+<%@include file="/common.jsp"%>
 
 <!doctype html>
 <html>
 <head>
-<%= htmlHead("Activities index") %>
+<title>Attività</title>
+<%=headContent()%>
 </head>
 <body>
 	<div id="container">
-		<%= banner() %>
-		<%= landmarks("attività") %>
+		<%=banner()%>
+		<%=landmarks("attività")%>
 		<div id="main">
 			<div id="left" class="column">
 				<h4>Structural links:</h4>
@@ -30,7 +31,7 @@
 					<li>Voce 4</li>
 				</ul>
 			</div>
-			
+
 			<div id="content">
 				<h1>List of activities:</h1>
 				<ul>
@@ -40,12 +41,10 @@
 						</li>
 					</c:forEach>
 				</ul>
-				<br>
-				<br>
+				<br> <br>
 			</div>
-			
-			<div id="right" class="column">
-			</div>
+
+			<div id="right" class="column"></div>
 		</div>
 	</div>
 </body>

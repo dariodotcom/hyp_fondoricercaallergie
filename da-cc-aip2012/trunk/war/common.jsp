@@ -8,11 +8,8 @@
 			"finanziatore" };
 	private String[] landmarksURL = { "/", "/projects", "/activities", "" };
 
-	String htmlHead(String title) {
-		return "	<title>"
-				+ title
-				+ "</title>\n"
-				+ "	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>\n"
+	String headContent() {
+		return "	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>\n"
 				+ "	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/global.css\"/>\n"
 				+ "	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />";
 	}
@@ -47,10 +44,7 @@
 
 		return "header: " + context;
 	}
-	
-	String linkList(String title){
+
+	String linkList(String title) {
 		return "";
-	}
-	
-	
-	%>
+	}%>

@@ -4,7 +4,22 @@
 body{
 	font-family: Open Sans, tahoma, arial, sans-serif;
 }
+
+a{
+	color: rgb(41,63,90);
+	text-decoration: none;
+}
 	
+a:not([selected="true"]):hover{
+	text-decoration: underline;	
+}
+
+.hint{
+	color: #555555;
+	font-style: italic;
+	font-size: 12px;
+}
+
 #container{
 	width: 980px;
 	margin: 0 auto !important;
@@ -84,4 +99,28 @@ body{
 
 #menu > .menu_entry:not([selected="true"]):hover > a {
 	text-decoration: underline;
+}
+
+/*Navigation links*/
+.column > ul > li[selected="true"] > a{
+	font-weight: bold;
+}
+
+/*Administration page*/
+textarea{
+	width: 100%;
+	height: 200px;
+}
+
+.admin_msg{
+	width: 100%;
+	background: black;
+	color: white;
+	padding: 5px 10px;
+}
+
+.admin_msg > .close{
+	float: right;
+	font-weight: bold;
+	cursor: pointer;
 }

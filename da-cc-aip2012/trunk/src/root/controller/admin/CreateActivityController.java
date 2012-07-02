@@ -10,36 +10,62 @@ import root.model.Project;
 import root.service.ActivityService;
 import root.service.ProjectService;
 
-public class CreateActivityController extends Controller{
+public class CreateActivityController extends Controller {
 
     @Override
     protected Navigation run() throws Exception {
-        System.out.println("Activity controller");
         String name = asString("activity_name");
+        if (!checkString(name)) {
+            requestScope("admin_msg", "Errore: Il campo 'Nome' è vuoto.");
+            return forward("/admin/activities");
+        }
+
         String info = asString("activity_info");
+        if (!checkString(info)) {
+            requestScope(
+                "admin_msg",
+                "Errore: Il campo 'Informazioni' è vuoto.");
+            return forward("/admin/activities");
+        }
+
         String description = asString("activity_description");
+        if (!checkString(description)) {
+            requestScope("admin_msg", "Errore: Il campo 'Descrizione' è vuoto.");
+            return forward("/admin/activities");
+        }
+
+        Key linkedProjectKey;
+        try {
+            linkedProjectKey = asKey("linked_project");
+        } catch (IllegalArgumentException ia) {
+            requestScope(
+                "admin_msg",
+                "Errore: Il campo 'Progetto collegato' è vuoto.");
+            return forward("/admin/activities");
+        }
+
         Activity activity = new Activity();
         activity.setName(name);
         activity.setGeneralInfo(info);
         activity.setDescription(description);
-        
-        System.out.println(asString("linked_project"));
-        Key linkedProjectKey;
-        try{
-           linkedProjectKey = asKey("linked_project");
-        }catch(IllegalArgumentException ia){
-            //TODO: handle exception;
-            System.out.println("null project");
-            return forward("/admin/");
-        }
-        
+
         Project linkedProject = ProjectService.get(linkedProjectKey);
         activity.getProjectRef().setModel(linkedProject);
-        
+
         ActivityService.put(activity);
+
+        requestScope("activity_name", "");
+        requestScope("activity_info", "");
+        requestScope("activity_documentation", "");
+        requestScope("admin_msg", "Attività creata.");
+        
         
         // TODO Auto-generated method stub
-        return forward("/admin/");
+        return forward("/admin/activities");
+    }
+
+    private boolean checkString(String str) {
+        return str != null && str.length() > 0;
     }
 
 }

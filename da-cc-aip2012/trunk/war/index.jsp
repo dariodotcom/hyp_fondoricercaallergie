@@ -7,7 +7,8 @@
 <!doctype html>
 <html>
 <head>
-<%= htmlHead("Home") %>
+	<title>Fondo per la lotta alle allergie</title>
+	<%= headContent() %>
 </head>
 <body>
 	<div id="container">

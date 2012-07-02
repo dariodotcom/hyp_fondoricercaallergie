@@ -1,18 +1,22 @@
+<%@page import="root.model.Activity"%>
+<%@page import="root.model.Project"%>
 <%@page pageEncoding="UTF-8" isELIgnored="false" session="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
-<%@include file="/common.jsp" %>
+<%@include file="/common.jsp"%>
 
 <!doctype html>
 <html>
 <head>
-<%= htmlHead("Project index") %>
+<title>Progetti</title>
+<%=headContent()%>
 </head>
 <body>
 	<div id="container">
-		<%= banner() %>
-		<%= landmarks("progetti") %>
+		<%=banner()%>
+		<%=landmarks("progetti")%>
+		
 		<div id="main">
 			<div id="left" class="column">
 				<h4>Structural links:</h4>
@@ -30,7 +34,7 @@
 					<li>Voce 4</li>
 				</ul>
 			</div>
-			
+
 			<div id="content">
 				<h3>Project list:</h3>
 				<ul>
@@ -39,14 +43,10 @@
 							href="/projects/project?id=${f:h(project.key)}">View</a>)</li>
 					</c:forEach>
 				</ul>
-				<br>
-				<br>
-				<a href="/">Home</a>
 			</div>
-			
-			<div id="right" class="column">
-			</div>
-		
+
+			<div id="right" class="column"></div>
+
 		</div>
 	</div>
 </body>
