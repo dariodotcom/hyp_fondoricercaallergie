@@ -50,12 +50,42 @@
 						<p>${activity.generalInfo}</p>
 					</c:otherwise>
 				</c:choose>
-
-
-				<br> <br>
 			</div>
 
-			<div id="right" class="column"></div>
+			<div id="right" class="column">
+				<c:if test="${activityGroupNavType != null}">
+					<span class="group_nav_upper">Stai navigando in</span>
+					<br>
+					<span class="group_nav_header">${activityGroupNavDesc}</span>
+
+					<ul class="group_nav_list">
+						<li><a class="group_nav_link"
+							href="${f:h(activityGroupNavIndex)}">Indice</a></li>
+						<li><c:choose>
+								<c:when test="${activityGroupNavPrev != null }">
+									<a class="group_nav_link"
+										href="/activities/activity?id=${f:h(activityGroupNavPrev.key)}">
+										Attività precedente</a>
+								</c:when>
+								<c:otherwise>
+									<span class="group_nav_link disabled_link"> Attività
+										precedente</span>
+								</c:otherwise>
+							</c:choose></li>
+						<li><c:choose>
+								<c:when test="${activityGroupNavNext != null }">
+									<a class="group_nav_link"
+										href="/activities/activity?id=${f:h(activityGroupNavNext.key)}">
+										Attività successiva</a>
+								</c:when>
+								<c:otherwise>
+									<span class="group_nav_link disabled_link"> Attività
+										successiva</span>
+								</c:otherwise>
+							</c:choose></li>
+					</ul>
+				</c:if>
+			</div>
 
 		</div>
 	</div>

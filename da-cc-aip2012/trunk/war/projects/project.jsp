@@ -33,13 +33,9 @@
 
 				</ul>
 				<h4>Attività collegate:</h4>
-				<ul>
-					<c:forEach items="${linkedActivities}" var="activity">
-						<li>${f:h(activity.name)} (<a
-							href="/activities/activity?id=${f:h(activity.key)}">View</a>)
-						</li>
-					</c:forEach>
-				</ul>
+				<a href="/activities/linkedTo?projectId=${f:h(project.key)}">
+					Visualizza attività collegate
+				</a>
 			</div>
 
 			<div id="content">
@@ -57,28 +53,31 @@
 			</div>
 
 			<div id="right" class="column">
-				<c:if test="${groupNav != null}">
-					<h4>${groupNavName}</h4>
+				<c:if test="${projectGroupNavType != null}">
+					<span class="group_nav_upper">Stai navigando in</span><br>
+					<span class="group_nav_header">${projectGroupNavDesc}</span>
+					<br class="group_nav_spacer">
 					<c:choose>
-						<c:when test="${groupNavPrev != null }">
-							<p>
-								<a href="/projects/project?id=${f:h(groupNavPrev.key)}">&lt;&lt;
+						<c:when test="${projectGroupNavPrev != null }">
+							<span class="group_nav_link">
+								<a href="/projects/project?id=${f:h(projectGroupNavPrev.key)}">&lt;&lt;
 									Progetto precedente</a>
-							</p>
+							</span>
 						</c:when>
 						<c:otherwise>
-							<p class="disabled_link">&lt;&lt; Progetto precedente</p>
+							<span class="group_nav_link disabled_link">&lt;&lt; Progetto precedente</span>
 						</c:otherwise>
 					</c:choose>
+					<br>
 					<c:choose>
-						<c:when test="${groupNavNext != null }">
-							<p>
-								<a href="/projects/project?id=${f:h(groupNavNext.key)}">&gt;&gt;
+						<c:when test="${projectGroupNavNext != null }">
+							<span class="group_nav_link">
+								<a href="/projects/project?id=${f:h(projectGroupNavNext.key)}">&gt;&gt;
 									Progetto successivo</a>
-							</p>
+							</span>
 						</c:when>
 						<c:otherwise>
-							<p class="disabled_link">&gt;&gt; Progetto successivo</p>
+							<span class="group_nav_link disabled_link">&gt;&gt; Progetto successivo</span>
 						</c:otherwise>
 					</c:choose>
 				</c:if>

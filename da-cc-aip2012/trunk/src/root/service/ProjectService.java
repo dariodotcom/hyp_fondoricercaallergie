@@ -14,6 +14,10 @@ public class ProjectService {
     public static List<Project> getProjectList(){
         return Datastore.query(ProjectMeta.get()).asList();
     }
+
+    public static List<Project> getProjectList(String type, String param){
+        return Datastore.query(ProjectMeta.get()).asList();
+    }
     
     public static Project get(Key projectKey) {
         Project project = Datastore.get(Project.class, projectKey);

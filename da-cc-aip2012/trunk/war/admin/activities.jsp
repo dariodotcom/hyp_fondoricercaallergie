@@ -25,6 +25,13 @@
 			</div>
 
 			<div id="content">
+				<%
+					String msg = (String) request.getAttribute("admin_msg");
+					if(msg != null){
+						out.println(showMsg(msg));
+					}
+				%>
+				
 				<h1>Gestione attività</h1>
 				<p>Da qui è possibile gestire le attività.</p>
 				<br>

@@ -26,12 +26,12 @@
 			</div>
 
 			<div id="content">
-				<c:if test="${admin_msg != null}">
-					<div class="admin_msg">
-						${f:h(admin_msg)} <span class="close"
-							onclick="this.parentNode.style.display='none'">X</span>
-					</div>
-				</c:if>
+				<%
+					String msg = (String) request.getAttribute("admin_msg");
+					if(msg != null){
+						out.println(showMsg(msg));
+					}
+				%>
 
 				<h1>Gestione progetti</h1>
 				<p>Da qui è possibile gestire i progetti.</p>

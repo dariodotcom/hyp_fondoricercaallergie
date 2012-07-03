@@ -36,6 +36,13 @@
 			</div>
 
 			<div id="content">
+				<%
+					String msg = (String) request.getAttribute("msg");
+					if(msg != null){
+						out.println(showMsg(msg));
+					}
+				%>
+				
 				<h3>Project list:</h3>
 				<ul>
 					<c:forEach items="${projects}" var="project">

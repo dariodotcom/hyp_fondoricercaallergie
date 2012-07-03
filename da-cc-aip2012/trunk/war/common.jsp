@@ -57,4 +57,9 @@
 			String format = "<a href=\"%s\" alt=\"%s\">%s</a>";
 			return String.format(format, url, tooltip, text);
 		}
+	}
+
+	String showMsg(String msg) {
+		String format = "<div class=\"admin_msg\"> %s <span class=\"close\" onclick=\"this.parentNode.style.display='none'\">X</span></div>";
+		return String.format(format, msg);
 	}%>
