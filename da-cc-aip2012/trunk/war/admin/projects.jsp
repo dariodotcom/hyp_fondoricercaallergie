@@ -10,7 +10,6 @@
 <%=headContent()%>
 </head>
 <body>
-<body>
 	<div id="container">
 		<%=banner()%>
 		<%=landmarks("")%>
@@ -20,7 +19,8 @@
 				<h4>Amministrazione:</h4>
 				<ul>
 					<li><a href="/admin/">Pagina principale</a>
-					<li selected="true"><a href="/admin/projects">Gestione progetti</a></li>
+					<li selected="true"><a href="/admin/projects">Gestione
+							progetti</a></li>
 					<li><a href="/admin/activities">Gestione attività</a></li>
 				</ul>
 			</div>
@@ -28,7 +28,7 @@
 			<div id="content">
 				<%
 					String msg = (String) request.getAttribute("admin_msg");
-					if(msg != null){
+					if (msg != null) {
 						out.println(showMsg(msg));
 					}
 				%>
@@ -45,11 +45,19 @@
 							value="${project_name}" />
 					</p>
 					<p>
-						<label for="project_description">Informazioni:</label>
+						<label for="project_type">Tipo:</label><select id="project_type"
+							name="project_type">
+							<c:forEach items="${projectTypes}" var="type">
+								<option value="${f:h(type)}">${f:h(type)}</option>
+							</c:forEach>
+						</select>
+					</p>
+					<p>
+						<label for="project_description">Informazioni generali:</label>
 						<textarea id="project_info" name="project_info">${project_info}</textarea>
 					</p>
 					<p>
-						<label for="project_documentation">Description:</label>
+						<label for="project_documentation">Documentazione:</label>
 						<textarea id="project_documentation" name="project_documentation">${project_documentation}</textarea>
 					</p>
 					<input type="submit" value="Crea progetto">
@@ -59,6 +67,5 @@
 			<div id="right" class="column">&nbsp;</div>
 		</div>
 	</div>
-</body>
 </body>
 </html>

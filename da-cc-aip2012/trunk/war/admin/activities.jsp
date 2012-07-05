@@ -44,11 +44,11 @@
 							value="${activity_name}" />
 					</p>
 					<p>
-						<label for="activity_description">Informazioni:</label>
+						<label for="activity_description">Informazioni generali:</label>
 						<textarea id="activity_info" name="activity_info">${activity_info}</textarea>
 					</p>
 					<p>
-						<label for="activity_description">Documentazione:</label>
+						<label for="activity_description">Descrizione:</label>
 						<textarea id="activity_description" name="activity_description">${activity_description}</textarea>
 					</p>
 					<p>

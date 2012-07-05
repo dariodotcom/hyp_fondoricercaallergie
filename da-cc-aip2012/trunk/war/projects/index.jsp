@@ -1,5 +1,3 @@
-<%@page import="root.model.Activity"%>
-<%@page import="root.model.Project"%>
 <%@page pageEncoding="UTF-8" isELIgnored="false" session="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -16,39 +14,33 @@
 	<div id="container">
 		<%=banner()%>
 		<%=landmarks("progetti")%>
-		
+
 		<div id="main">
-			<div id="left" class="column">
-				<h4>Structural links:</h4>
-				<ul>
-					<li>Voce 1</li>
-					<li>Voce 2</li>
-					<li>Voce 3</li>
-					<li>Voce 4</li>
-				</ul>
-				<h4>Transition links:</h4>
-				<ul>
-					<li>Voce 1</li>
-					<li>Voce 2</li>
-					<li>Voce 3</li>
-					<li>Voce 4</li>
-				</ul>
-			</div>
+			<div id="left" class="column">&nbsp;</div>
 
 			<div id="content">
 				<%
 					String msg = (String) request.getAttribute("msg");
-					if(msg != null){
+					if (msg != null) {
 						out.println(showMsg(msg));
 					}
 				%>
-				
-				<h3>Project list:</h3>
+
+				<h2>Progetti</h2>
+				<p>Testo di introduzione</p>
+
+				<h4>Esplora i progetti:</h4>
 				<ul>
-					<c:forEach items="${projects}" var="project">
-						<li><b>${f:h(project.name)}</b> (<a
-							href="/projects/project?id=${f:h(project.key)}">View</a>)</li>
-					</c:forEach>
+					<li><a href="/projects/all" alt="Tutti i progetti">Tutti i
+							progetti</a></li>
+					<li>Progetti per tipo:</li>
+					<ul>
+						<c:forEach items="${projectTypes}" var="type">
+							<li><a href="/projects/byType?type=${f:h(type)}">
+									${f:h(type)} </a></li>
+						</c:forEach>
+					</ul>
+					<li>Progetti per anno di inizio:</li>
 				</ul>
 			</div>
 

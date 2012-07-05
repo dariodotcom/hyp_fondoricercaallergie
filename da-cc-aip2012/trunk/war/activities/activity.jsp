@@ -39,6 +39,12 @@
 			</div>
 
 			<div id="content">
+				<span id="orientation_info"> <span class="entry">Attività</span>
+					> <c:if test="${ activityGroupNavDesc != null }">
+						<span class="entry">${activityGroupNavDesc}</span> >
+					</c:if>
+				</span>
+
 				<h1>${f:h(activity.name)}</h1>
 				<c:choose>
 					<c:when test="${view=='desc'}">
@@ -89,8 +95,5 @@
 
 		</div>
 	</div>
-</body>
-</html>
-
 </body>
 </html>

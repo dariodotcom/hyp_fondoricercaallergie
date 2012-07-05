@@ -56,7 +56,7 @@ public class CreateActivityController extends Controller {
 
         requestScope("activity_name", "");
         requestScope("activity_info", "");
-        requestScope("activity_documentation", "");
+        requestScope("activity_description", "");
         requestScope("admin_msg", "Attività creata.");
         
         

@@ -7,38 +7,28 @@
 <!doctype html>
 <html>
 <head>
-<title>Attività</title>
+<title>Tutti i progetti</title>
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
 		<%=banner()%>
-		<%=landmarks("attività")%>
+		<%=landmarks("progetti")%>
 		<div id="main">
-			<div id="left" class="column">
-				&nbsp;
-			</div>
+			<div id="left" class="column">&nbsp;</div>
 
 			<div id="content">
-				<%
-					String msg = (String) request.getAttribute("msg");
-					if (msg != null) {
-						out.println(showMsg(msg));
-					}
-				%>
-
-				<h2>Attività</h2>
+				<h1>Progetti per tipo: ${projectType}</h1>
 				<p>Testo di introduzione</p>
-
-				<h4>Esplora le attività:</h4>
+				<br>
 				<ul>
-					<li><a href="/activities/all" alt="Tutte le attività">Tutte
-							le attività</a></li>
+					<c:forEach items="${projectList}" var="project">
+						<li><a href="/projects/project?id=${f:h(project.key)}">${f:h(project.name)}</a></li>
+					</c:forEach>
 				</ul>
-				<br> <br>
 			</div>
 
-			<div id="right" class="column"></div>
+			<div id="right" class="column">&nbsp;</div>
 		</div>
 	</div>
 </body>

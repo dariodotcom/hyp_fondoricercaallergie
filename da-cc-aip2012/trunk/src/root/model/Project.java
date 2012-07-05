@@ -26,8 +26,10 @@ public class Project implements Serializable {
 
     @Attribute(lob = true)
     private String documentation;
-    
-    /*many to one relationship between Activity and Project*/
+
+    private ProjectType type;
+
+    /* many to one relationship between Activity and Project */
     @Attribute(persistent = false)
     private InverseModelListRef<Activity, Project> activityRef =
         new InverseModelListRef<Activity, Project>(
@@ -37,7 +39,7 @@ public class Project implements Serializable {
 
     /**
      * Returns the key.
-     *
+     * 
      * @return the key
      */
     public Key getKey() {
@@ -46,7 +48,7 @@ public class Project implements Serializable {
 
     /**
      * Sets the key.
-     *
+     * 
      * @param key
      *            the key
      */
@@ -56,7 +58,7 @@ public class Project implements Serializable {
 
     /**
      * Returns the version.
-     *
+     * 
      * @return the version
      */
     public Long getVersion() {
@@ -65,7 +67,7 @@ public class Project implements Serializable {
 
     /**
      * Sets the version.
-     *
+     * 
      * @param version
      *            the version
      */
@@ -102,7 +104,8 @@ public class Project implements Serializable {
         }
         return true;
     }
-    
+
+    /* Getters and setters */
     public String getGeneralInfo() {
         return generalInfo;
     }
@@ -118,7 +121,7 @@ public class Project implements Serializable {
     public void setDocumentation(String documentation) {
         this.documentation = documentation;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -127,7 +130,15 @@ public class Project implements Serializable {
         this.name = name;
     }
 
-    public InverseModelListRef<Activity, Project> getActivityRef(){
+    public ProjectType getType() {
+        return type;
+    }
+
+    public void setType(ProjectType type) {
+        this.type = type;
+    }
+
+    public InverseModelListRef<Activity, Project> getActivityRef() {
         return activityRef;
     }
 }

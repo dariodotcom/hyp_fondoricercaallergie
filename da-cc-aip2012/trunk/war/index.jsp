@@ -16,20 +16,7 @@
 		<%= landmarks("home") %>
 		<div id="main">
 			<div id="left" class="column">
-				<h4>Structural links:</h4>
-				<ul>
-					<li>Voce 1</li>
-					<li>Voce 2</li>
-					<li>Voce 3</li>
-					<li>Voce 4</li>
-				</ul>
-				<h4>Transition links:</h4>
-				<ul>
-					<li>Voce 1</li>
-					<li>Voce 2</li>
-					<li>Voce 3</li>
-					<li>Voce 4</li>
-				</ul>
+				&nbsp;
 			</div>
 			
 			<div id="content">

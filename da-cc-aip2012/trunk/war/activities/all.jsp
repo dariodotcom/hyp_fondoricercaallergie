@@ -7,38 +7,37 @@
 <!doctype html>
 <html>
 <head>
-<title>Attività</title>
+<title>${f:h(activity.name)}</title>
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
 		<%=banner()%>
 		<%=landmarks("attività")%>
+
+		<!-- content -->
 		<div id="main">
-			<div id="left" class="column">
-				&nbsp;
-			</div>
+			<div id="left" class="column">&nbsp;</div>
 
 			<div id="content">
-				<%
-					String msg = (String) request.getAttribute("msg");
-					if (msg != null) {
-						out.println(showMsg(msg));
-					}
-				%>
+				<span id="orientation_info"> <span class="entry">Attività</span>
+					> <span class="entry">Tutte le attività</span>
+				</span>
 
-				<h2>Attività</h2>
+				<h1>Elenco delle attività</h1>
 				<p>Testo di introduzione</p>
-
-				<h4>Esplora le attività:</h4>
+				<br>
 				<ul>
-					<li><a href="/activities/all" alt="Tutte le attività">Tutte
-							le attività</a></li>
+					<c:forEach items="${activityList}" var="activity">
+						<li>${f:h(activity.name)} (<a
+							href="/activities/activity?id=${f:h(activity.key)}">view</a>)
+						</li>
+					</c:forEach>
 				</ul>
-				<br> <br>
 			</div>
 
-			<div id="right" class="column"></div>
+			<div id="right" class="column">&nbsp;</div>
+
 		</div>
 	</div>
 </body>

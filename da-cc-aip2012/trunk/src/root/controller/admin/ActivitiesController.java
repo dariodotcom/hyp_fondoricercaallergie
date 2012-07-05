@@ -9,7 +9,7 @@ public class ActivitiesController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
-        requestScope("projects", ProjectService.getProjectList());
+        requestScope("projects", ProjectService.getProjectList("all", null));
         return forward("activities.jsp");
     }
 }
