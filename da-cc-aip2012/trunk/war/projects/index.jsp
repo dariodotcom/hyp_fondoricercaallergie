@@ -26,20 +26,27 @@
 					}
 				%>
 
-				<h2>Progetti</h2>
-				<p>Testo di introduzione</p>
-
+				<h1 class="title">Progetti</h1>
+				<p>
+				In questa sezione è possibile accedere a tutti i progetti finanziati dal ministero della salute
+				a partire dal 2002 ad oggi. È possibile accedere ad un elenco di tutti i progetti ordinati
+				alfabeticamente, oppure è possibile navigare in base al settore cui appartengono, o al loro
+				anno di inizio.
+				</p>
 				<h4>Esplora i progetti:</h4>
-				<ul>
-					<li><a href="/projects/all" alt="Tutti i progetti">Tutti i
-							progetti</a></li>
-					<li>Progetti per tipo:</li>
-					<ul>
-						<c:forEach items="${projectTypes}" var="type">
-							<li><a href="/projects/byType?type=${f:h(type)}">
-									${f:h(type)} </a></li>
-						</c:forEach>
-					</ul>
+				<ul class="list">
+					<li class="list_entry">
+						<a href="/projects/all" alt="Tutti i progetti">Tutti i
+							progetti</a>
+					</li>
+					<li class="list_entry">Progetti per tipo:
+						<ul class="sub_list">
+							<c:forEach items="${projectTypes}" var="type">
+								<li class="sub_list_entry"><a href="/projects/byType?type=${f:h(type)}">
+										${f:h(type)} </a></li>
+							</c:forEach>
+						</ul>
+					</li>
 					<li>Progetti per anno di inizio:</li>
 				</ul>
 			</div>

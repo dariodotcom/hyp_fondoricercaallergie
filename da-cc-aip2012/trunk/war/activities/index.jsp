@@ -27,8 +27,13 @@
 					}
 				%>
 
-				<h2>Attività</h2>
-				<p>Testo di introduzione</p>
+				<h1 class="title">Attività</h1>
+				<p>
+				In questa sezione è possibile accedere alle varie attività svolte sui progetti finanziati,
+				utili al fine di testare quanto proposto e a portare i progetti a risultati concreti. È
+				possibile accedere a un elenco di tutte le attività ordinate alfabeticamente, oppure per
+				settore di appartenenza. 
+				</p>
 
 				<h4>Esplora le attività:</h4>
 				<ul>

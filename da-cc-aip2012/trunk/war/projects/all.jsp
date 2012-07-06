@@ -19,8 +19,10 @@
 
 			<div id="content">
 				<h1>Elenco dei progetti</h1>
-				<p>Testo di introduzione</p>
-				<br>
+				<p>
+				E’ qui presente un elenco di tutti i progetti finanziati dal Ministero
+				della Salute ordinati alfabeticamente.
+				</p>
 				<ul>
 					<c:forEach items="${projectList}" var="project">
 						<li><a href="/projects/project?id=${f:h(project.key)}">${f:h(project.name)}</a></li>

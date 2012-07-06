@@ -19,7 +19,33 @@
 
 			<div id="content">
 				<h1>Progetti per tipo: ${projectType}</h1>
-				<p>Testo di introduzione</p>
+				<c:choose>
+					<c:when test="${projectType=='Alimentari'}">
+						<p>
+						Sono qui presenti tutti i progetti che coinvolgono il settore alimentare finanziati dal Ministero della Salute.
+						</p>
+					</c:when>
+					<c:when test="${projectType=='Cosmetica'}">
+						<p>
+						Sono qui presenti tutti i progetti che coinvolgono il settore cosmetico finanziati dal Ministero della Salute.
+						</p>
+					</c:when>
+					<c:when test="${projectType=='Farmaci'}">
+						<p>
+						Sono qui presenti tutti i progetti che coinvolgono il settore farmaceutico finanziati dal Ministero della Salute.
+						</p>
+					</c:when>
+					<c:when test="${projectType=='Igiene'}">
+						<p>
+						Sono qui presenti tutti i progetti che coinvolgono il settore dell’igiene finanziati dal Ministero della Salute.
+						</p>
+					</c:when>
+					<c:when test="${projectType=='Igiene'}">
+						<p>
+						Sono qui presenti tutti i progetti che coinvolgono il settore delle tecnologie finanziati dal Ministero della Salute.
+						</p>
+					</c:when>	
+				</c:choose>
 				<br>
 				<ul>
 					<c:forEach items="${projectList}" var="project">

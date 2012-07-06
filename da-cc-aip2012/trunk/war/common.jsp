@@ -7,7 +7,7 @@
 
 <%!private String[] landmarksNames = { "home", "progetti", "attività",
 			"finanziatore" };
-	private String[] landmarksURL = { "/", "/projects", "/activities", "" };
+	private String[] landmarksURL = { "/", "/projects", "/activities", "/financier" };
 
 	String headContent() {
 		return "	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>\n"
@@ -16,7 +16,7 @@
 	}
 
 	String banner() {
-		return "	<div id=\"banner\">\n" + "	Fondo per la lotta alle allergie\n"
+		return "	<div id=\"banner\">\n" + "	Fondo Ricerca per le Allergie\n"
 				+ "	</div>";
 	}
 

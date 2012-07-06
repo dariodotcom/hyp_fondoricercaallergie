@@ -25,8 +25,11 @@
 				</span>
 
 				<h1>Elenco delle attività</h1>
-				<p>Testo di introduzione</p>
-				<br>
+				<p>
+				E’ qui presente un elenco di tutte le attività finanziate dal Ministero
+				della Salute ordinati alfabeticamente.
+				</p>
+				
 				<ul>
 					<c:forEach items="${activityList}" var="activity">
 						<li>${f:h(activity.name)} (<a
