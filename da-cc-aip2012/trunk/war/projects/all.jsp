@@ -18,21 +18,31 @@
 			<div id="left" class="column">&nbsp;</div>
 
 			<div id="content">
-				<h1>Elenco dei progetti</h1>
-				<p>
-				E’ qui presente un elenco di tutti i progetti finanziati dal Ministero
-				della Salute ordinati alfabeticamente.
-				</p>
-				<ul>
-					<c:forEach items="${projectList}" var="project">
-						<li><a href="/projects/project?id=${f:h(project.key)}">${f:h(project.name)}</a></li>
-					</c:forEach>
-				</ul>
+				<span id="orientation_info"> <a class="entry"
+					href="/projects/">Progetti</a> &gt;
+				</span>
+
+				<h1>Tutti i progetti</h1>
+				<p>E’ qui presente un elenco di tutti i progetti finanziati dal
+					Ministero della Salute ordinati alfabeticamente.</p>
+
+				<c:choose>
+					<c:when
+						test="${projectList == null || fn:length(projectList) == 0 }">
+						<span class="disabled_link">Nessun progetto disponibile in
+							questa categoria.</span>
+					</c:when>
+					<c:otherwise>
+						<ul>
+							<c:forEach items="${projectList}" var="project">
+								<li><a href="/projects/project?id=${f:h(project.key)}">${f:h(project.name)}</a></li>
+							</c:forEach>
+						</ul>
+					</c:otherwise>
+				</c:choose>
 			</div>
 
-			<div id="right" class="column">
-				&nbsp;
-			</div>
+			<div id="right" class="column">&nbsp;</div>
 		</div>
 	</div>
 </body>

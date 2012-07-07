@@ -20,17 +20,31 @@
 			<div id="left" class="column">&nbsp;</div>
 
 			<div id="content">
-				<span>Attività collegate a</span>
-				<h1>${f:h(linkedProject.name)}</h1>
+				<span id="orientation_info"> <a class="entry"
+					href="/projects/">Attività</a> &gt;
+					<span class="entry">Attività collegate a:</span>
+				</span>
+				<h1 class="content_title">
+					${f:h(linkedProject.name)}</h1>
 				<ul>
-					<c:forEach items="${linkedActivities}" var="activity">
-						<li>${f:h(activity.name)} (<a
-							href="/activities/activity?id=${f:h(activity.key)}">View</a>)
-						</li>
-					</c:forEach>
+					<c:choose>
+						<c:when
+							test="${linkedActivities == null || fn:length(linkedActivities) == 0 }">
+							<span class="disabled_link">Nessuna attività disponibile
+								in questa categoria.</span>
+						</c:when>
+						<c:otherwise>
+							<c:forEach items="${linkedActivities}" var="activity">
+								<li>${f:h(activity.name)} (<a
+									href="/activities/activity?id=${f:h(activity.key)}">View</a>)
+								</li>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 				<br> <span>Torna a </span><a
-					href="/projects/project?id=${f:h(linkedProject.key)}">${linkedProject.name }</a>
+					href="/projects/project?id=${f:h(linkedProject.key)}">${linkedProject.name
+					}</a>
 
 			</div>
 

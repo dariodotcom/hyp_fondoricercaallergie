@@ -6,8 +6,10 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 
 <%!private String[] landmarksNames = { "home", "progetti", "attività",
-			"finanziatore" };
-	private String[] landmarksURL = { "/", "/projects", "/activities", "/financier" };
+			"risultati", "eventi", "partners", "finanziatore", "programma",
+			"regole" };
+	private String[] landmarksURL = { "/", "/projects", "/activities", null,
+			null, null, "/financier", null, null };
 
 	String headContent() {
 		return "	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>\n"
@@ -16,8 +18,9 @@
 	}
 
 	String banner() {
-		return "	<div id=\"banner\">\n" + "	Fondo Ricerca per le Allergie\n"
-				+ "	</div>";
+		return "	<div id=\"banner\">\n"
+//				+ "<img src=\"/src/logo.png\" id=\"logo\"/>\n"
+				+ "Fondo Ricerca per le Allergie\n" + "	</div>";
 	}
 
 	String landmarks(String selected) {
@@ -25,13 +28,19 @@
 				"<div id=\"landmarks\">\n<ul id=\"menu\">\n");
 
 		for (int i = 0; i < landmarksNames.length; i++) {
-			landmarks.append("<li class=\"menu_entry\"");
+			if (landmarksURL[i] != null) {
+				landmarks.append("<li class=\"menu_entry\"");
+			} else {
+				landmarks.append("<li class=\"menu_entry disabled\"");
+			}
 
 			if (selected.equals(landmarksNames[i])) {
 				landmarks.append(" selected=\"true\"");
 			}
 
-			landmarks.append("><a href=\"" + landmarksURL[i] + "\">");
+			landmarks.append("><a href=\""
+					+ (landmarksURL[i] == null ? "javascript:void(0)"
+							: landmarksURL[i]) + "\">");
 			landmarks.append(landmarksNames[i] + "</a>\n");
 			landmarks.append("</li>\n");
 		}

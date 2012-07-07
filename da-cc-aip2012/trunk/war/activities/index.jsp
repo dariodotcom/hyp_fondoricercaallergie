@@ -27,7 +27,7 @@
 					}
 				%>
 
-				<h1 class="title">Attività</h1>
+				<h1 class="content_title">Attività</h1>
 				<p>
 				In questa sezione è possibile accedere alle varie attività svolte sui progetti finanziati,
 				utili al fine di testare quanto proposto e a portare i progetti a risultati concreti. È
