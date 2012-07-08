@@ -27,27 +27,32 @@
 				%>
 
 				<h1 class="title">Progetti</h1>
-				<p>
-				In questa sezione è possibile accedere a tutti i progetti finanziati dal ministero della salute
-				a partire dal 2002 ad oggi. È possibile accedere ad un elenco di tutti i progetti ordinati
-				alfabeticamente, oppure è possibile navigare in base al settore cui appartengono, o al loro
-				anno di inizio.
-				</p>
+				<p>In questa sezione è possibile accedere a tutti i progetti
+					finanziati dal ministero della salute a partire dal 2002 ad oggi. È
+					possibile accedere ad un elenco di tutti i progetti ordinati
+					alfabeticamente, oppure è possibile navigare in base al settore cui
+					appartengono, o al loro anno di inizio.</p>
 				<h4>Esplora i progetti:</h4>
 				<ul class="list">
-					<li class="list_entry">
-						<a href="/projects/all" alt="Tutti i progetti">Tutti i
-							progetti</a>
-					</li>
+					<li class="list_entry"><a href="/projects/all"
+						alt="Tutti i progetti">Tutti i progetti</a></li>
 					<li class="list_entry">Progetti per tipo:
 						<ul class="sub_list">
 							<c:forEach items="${projectTypes}" var="type">
-								<li class="sub_list_entry"><a href="/projects/byType?type=${f:h(type)}">
-										${f:h(type)} </a></li>
+								<li class="sub_list_entry"><a
+									href="/projects/byType?type=${f:h(type)}"> ${f:h(type)} </a></li>
 							</c:forEach>
 						</ul>
 					</li>
-					<li>Progetti per anno di inizio:</li>
+					<li>Progetti per anno di inizio:
+						<ul class="sub_list">
+							<c:forEach items="${projectYears}" var="year">
+								<li class="sub_list_entry"><span class="disabled_link">${f:h(year)}</span></li>
+							</c:forEach>
+						</ul>
+
+					</li>
+
 				</ul>
 			</div>
 

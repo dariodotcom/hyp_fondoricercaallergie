@@ -20,6 +20,7 @@
 			</div>
 			
 			<div id="content">
+				<img src="/src/header.png"/>
 				<p>
 				Le allergie rappresentano un problema sempre più diffuso, non solo in età pediatrica,
 				ma anche tra la popolazione adulta.<br>

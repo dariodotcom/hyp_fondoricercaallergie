@@ -18,9 +18,8 @@
 	}
 
 	String banner() {
-		return "	<div id=\"banner\">\n"
-//				+ "<img src=\"/src/logo.png\" id=\"logo\"/>\n"
-				+ "Fondo Ricerca per le Allergie\n" + "	</div>";
+		return "	<div id=\"banner\">\n<span>\n"
+				+ "Fondo Ricerca per le Allergie\n" + "	</span></div>";
 	}
 
 	String landmarks(String selected) {

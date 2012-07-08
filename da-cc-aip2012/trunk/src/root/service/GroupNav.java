@@ -100,14 +100,12 @@ public abstract class GroupNav<E> {
     public void updateRequest(ServletRequest r, E current) {
         E prev = getNeighbor(current, -1);
         E next = getNeighbor(current, 1);
-
-        if (prev != null || next != null) {
-            r.setAttribute(getGroupNavID() + "Type", type);
-            r.setAttribute(getGroupNavID() + "Index", index);
-            r.setAttribute(getGroupNavID() + "Desc", desc);
-            r.setAttribute(getGroupNavID() + "Prev", prev);
-            r.setAttribute(getGroupNavID() + "Next", next);
-        }
+        
+        r.setAttribute(getGroupNavID() + "Type", type);
+        r.setAttribute(getGroupNavID() + "Index", index);
+        r.setAttribute(getGroupNavID() + "Desc", desc);
+        r.setAttribute(getGroupNavID() + "Prev", prev);
+        r.setAttribute(getGroupNavID() + "Next", next);
     }
 
     private E getNeighbor(E current, int offset) {

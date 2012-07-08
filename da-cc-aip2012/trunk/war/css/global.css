@@ -42,13 +42,17 @@ span.hype {
 
 #banner {
 	width: 980px;
-	height: 70px;
 	padding: 10px 0;
+	text-align: center;
+}
+
+#banner > span{
+	padding: 12px 0 12px 100px;
 	font-family: tahoma, arial, sans-serif;
 	font-size: 45px;
 	font-variant: small-caps;
-	text-align: center;
 	color: #222222;
+	background: transparent url("/src/logo.png") no-repeat;
 }
 
 #main,#landmarks {

@@ -28,6 +28,7 @@ public class ProjectService {
      * */
     public static List<Project> getProjectList(String type, String param) {
         ProjectMeta projectMeta = ProjectMeta.get();
+
         if (type.equals("byType")) {
             ProjectType projectType;
             try {
@@ -35,14 +36,24 @@ public class ProjectService {
             } catch (IllegalArgumentException e) {
                 System.out
                     .println("Non exsisting project type passed to ProjectService");
-                return Datastore.query(projectMeta).asList();
+                return Datastore
+                    .query(projectMeta)
+                    .sort(projectMeta.name.asc)
+                    .asList();
             }
 
             /* Filter project with type not equal to given type */
             FilterCriterion criterion = projectMeta.type.equal(projectType);
-            return Datastore.query(projectMeta).filter(criterion).asList();
+            return Datastore
+                .query(projectMeta)
+                .filter(criterion)
+                .sort(projectMeta.name.asc)
+                .asList();
         } else {
-            return Datastore.query(projectMeta).asList();
+            return Datastore
+                .query(projectMeta)
+                .sort(projectMeta.name.asc)
+                .asList();
         }
     }
 

@@ -58,9 +58,9 @@
 			</div>
 
 			<div id="content">
-				<span id="orientation_info"> <span class="entry">Attività</span>
-					> <c:if test="${ activityGroupNavDesc != null }">
-						<span class="entry">${activityGroupNavDesc}</span> >
+				<span id="orientation_info"> <a class="entry" href="/activities/">Attività</a>
+					&gt; <c:if test="${ activityGroupNavDesc != null }">
+						<a class="entry" href="${activityGroupNavIndex}">${activityGroupNavDesc}</a> &gt;
 					</c:if>
 				</span>
 

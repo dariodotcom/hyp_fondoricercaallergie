@@ -17,12 +17,14 @@ public class ActivityService {
     }
 
     public static List<Activity> getActivityList(String type, String value){
+        ActivityMeta activityMeta = ActivityMeta.get();
+        
         if(type.equals("linkedTo")){
             Key projectKey = KeyFactory.stringToKey(value);
             Project linkedProject = Datastore.get(Project.class, projectKey);
             return linkedProject.getActivityRef().getModelList();
         }else {
-            return Datastore.query(ActivityMeta.get()).asList();
+            return Datastore.query(activityMeta).sort(activityMeta.name.asc).asList();
         }
     }
     
