@@ -8,12 +8,13 @@
 	//Find out what to show
 	String view = (String) request.getAttribute("view");
 	boolean viewDesc = view != null && view.equals("desc");
+	String pageTitle = (viewDesc ? "Descrizione" : "Informazioni generali");
 %>
 
 <!doctype html>
 <html>
 <head>
-<title>${f:h(activity.name)}</title>
+<title>${f:h(activity.name)} - <%= pageTitle %></title>
 <!-- Common head -->
 <%=headContent()%>
 </head>

@@ -13,7 +13,15 @@
 <!doctype html>
 <html>
 <head>
-<title>${project.name}</title>
+
+<%
+	String view = (String) request.getAttribute("view");
+	boolean viewDoc = view != null && view.equals("doc");
+	String pageTitle = (viewDoc ? "Documentazione" : "Informazioni generali");
+%>
+
+
+<title>${project.name} - <%= pageTitle %></title>
 <!-- Common head -->
 <%=headContent()%>
 </head>

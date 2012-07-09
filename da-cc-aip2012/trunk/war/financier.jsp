@@ -4,10 +4,16 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <%@include file="/common.jsp"%>
 
+<%
+	String view = (String) request.getAttribute("view");
+	boolean viewInfo = (view != null && view.equals("info"));
+	String pageTitle = (viewInfo ? "Informazioni dettagliate" : "Presentazione");
+%>
+
 <!doctype html>
 <html>
 <head>
-<title>Finanziatore</title>
+<title>Finanziatore - <%=pageTitle%></title>
 <%=headContent()%>
 </head>
 <body>
@@ -15,10 +21,6 @@
 		<%=banner()%>
 		<%=landmarks("finanziatore")%>
 
-		<%
-			String view = (String) request.getAttribute("view");
-			boolean viewInfo = (view != null && view.equals("info"));
-		%>
 		<div id="main">
 			<div id="left" class="column">
 				<div class="col_family">

@@ -7,7 +7,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Tutti i progetti</title>
+<title>${projectType} | Progetti</title>
 <!-- Common head lines -->
 <%=headContent()%>
 </head>

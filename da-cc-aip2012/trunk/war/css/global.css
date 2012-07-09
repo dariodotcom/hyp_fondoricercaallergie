@@ -100,7 +100,7 @@ span.hype {
 	color: black;
 }
 
-#menu>.menu_entry:not       ([selected="true"]       ):hover>a {
+#menu>.menu_entry:not(.disabled):hover>a {
 	text-decoration: underline;
 }
 
