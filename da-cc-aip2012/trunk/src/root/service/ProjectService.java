@@ -11,6 +11,9 @@ import root.model.ProjectType;
 
 import com.google.appengine.api.datastore.Key;
 
+/**
+ * Utility class to retrieve/put Projects from/into the datastore.
+ * */
 public class ProjectService {
 
     // public static List<Project> getProjectList(){

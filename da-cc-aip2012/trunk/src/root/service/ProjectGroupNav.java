@@ -6,8 +6,11 @@ import javax.servlet.http.HttpSession;
 
 import root.model.Project;
 
+/**
+ * Group Navigation for Projects
+ * */
 public class ProjectGroupNav extends GroupNav<Project> {
-  
+
     public ProjectGroupNav(String type, String param, String index, String desc) {
         super(type, param, index, desc);
     }

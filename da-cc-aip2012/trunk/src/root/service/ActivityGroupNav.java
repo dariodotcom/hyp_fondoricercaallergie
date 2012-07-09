@@ -6,13 +6,16 @@ import javax.servlet.http.HttpSession;
 
 import root.model.Activity;
 
+/**
+ * Group navigation for Activities.
+ * */
 public class ActivityGroupNav extends GroupNav<Activity> {
 
     public ActivityGroupNav(String type, String param, String index, String desc) {
         super(type, param, index, desc);
     }
-    
-    public ActivityGroupNav(HttpSession s){
+
+    public ActivityGroupNav(HttpSession s) {
         super(s);
     }
 
@@ -25,5 +28,4 @@ public class ActivityGroupNav extends GroupNav<Activity> {
     protected List<Activity> getElementList(String type, String param) {
         return ActivityService.getActivityList(type, param);
     }
-
 }
