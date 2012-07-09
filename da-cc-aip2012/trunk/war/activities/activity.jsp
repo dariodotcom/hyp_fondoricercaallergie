@@ -14,16 +14,21 @@
 <html>
 <head>
 <title>${f:h(activity.name)}</title>
+<!-- Common head -->
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
+		<!-- Banner -->
 		<%=banner()%>
+		
+		<!-- Landmarks -->
 		<%=landmarks("attività")%>
 
-		<!-- content -->
 		<div id="main">
 			<div id="left" class="column">
+
+				<!-- Structural links -->
 				<div class="col_family">
 					<h4 class="col_header">Attività</h4>
 					<ul class="col_list">
@@ -37,6 +42,7 @@
 					</ul>
 				</div>
 
+				<!-- Transition links -->
 				<div class="col_family">
 					<h4 class="col_header">Legata a:</h4>
 					<ul class="col_list">
@@ -57,6 +63,7 @@
 				</div>
 			</div>
 
+			<!-- Content -->
 			<div id="content">
 				<span id="orientation_info"> <a class="entry" href="/activities/">Attività</a>
 					&gt; <c:if test="${ activityGroupNavDesc != null }">
@@ -77,6 +84,7 @@
 				</c:choose>
 			</div>
 
+			<!-- Group Links -->
 			<div id="right" class="column">
 				<c:if test="${activityGroupNavType != null}">
 					<div class="col_family">

@@ -7,26 +7,36 @@
 <html>
 <head>
 <title>Amministrazione Progetti</title>
+<!-- Common head lines -->
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
+		<!-- Banner -->
 		<%=banner()%>
+		
+		<!-- Landmarsk -->
 		<%=landmarks("")%>
 
 		<div id="main">
+			
+			<!-- Structural links -->
 			<div id="left" class="column">
-				<h4>Amministrazione:</h4>
-				<ul>
-					<li><a href="/admin/">Pagina principale</a>
-					<li selected="true"><a href="/admin/projects">Gestione
-							progetti</a></li>
-					<li><a href="/admin/activities">Gestione attività</a></li>
-				</ul>
+				<div class="col_family">
+					<h4 class="col_header">Amministrazione:</h4>
+					<ul class="col_list">
+						<li><a href="/admin/">Pagina principale</a>
+						<li selected="true"><a href="/admin/projects">Gestione
+								progetti</a></li>
+						<li><a href="/admin/activities">Gestione attività</a></li>
+					</ul>
+				</div>
 			</div>
 
+			<!-- Content -->
 			<div id="content">
 				<%
+					//If request contains a message to display, display it!
 					String msg = (String) request.getAttribute("admin_msg");
 					if (msg != null) {
 						out.println(showMsg(msg));

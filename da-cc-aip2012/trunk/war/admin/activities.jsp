@@ -7,31 +7,41 @@
 <html>
 <head>
 <title>Amministrazione Attività</title>
+<!-- Common head lines -->
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
+		<!-- Banner -->
 		<%=banner()%>
+		
+		<!-- Landmarks -->
 		<%=landmarks("")%>
 
 		<div id="main">
+		
+			<!-- Structural links -->
 			<div id="left" class="column">
-				<h4>Amministrazione:</h4>
-				<ul>
-					<li><a href="/admin/">Pagina principale</a>
-					<li><a href="/admin/projects">Gestione progetti</a></li>
-					<li selected="true"><a href="/admin/activities">Gestione attività</a></li>
-				</ul>
+				<div class="col_family">
+					<h4 class="col_header">Amministrazione:</h4>
+					<ul class="col_list">
+						<li><a href="/admin/">Pagina principale</a>
+						<li><a href="/admin/projects">Gestione progetti</a></li>
+						<li selected="true"><a href="/admin/activities">Gestione
+								attività</a></li>
+					</ul>
+				</div>
 			</div>
 
+			<!-- Content -->
 			<div id="content">
 				<%
 					String msg = (String) request.getAttribute("admin_msg");
-					if(msg != null){
+					if (msg != null) {
 						out.println(showMsg(msg));
 					}
 				%>
-				
+
 				<h1>Gestione attività</h1>
 				<p>Da qui è possibile gestire le attività.</p>
 				<br>

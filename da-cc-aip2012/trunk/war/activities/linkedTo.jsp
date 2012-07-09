@@ -8,24 +8,26 @@
 <html>
 <head>
 <title>Attività collegate a ${linkedProject.name}</title>
+<!-- Common head lines -->
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
+		<!-- Banner -->
 		<%=banner()%>
+		
+		<!-- Landmarks -->
 		<%=landmarks("attività")%>
 
-		<!-- content -->
 		<div id="main">
 			<div id="left" class="column">&nbsp;</div>
 
 			<div id="content">
 				<span id="orientation_info"> <a class="entry"
-					href="/projects/">Attività</a> &gt;
-					<span class="entry">Attività collegate a:</span>
+					href="/projects/">Attività</a> &gt; <span class="entry">Attività
+						collegate a:</span>
 				</span>
-				<h1 class="content_title">
-					${f:h(linkedProject.name)}</h1>
+				<h1 class="content_title">${f:h(linkedProject.name)}</h1>
 				<ul>
 					<c:choose>
 						<c:when
@@ -48,7 +50,7 @@
 
 			</div>
 
-			<div id="right" class="column"></div>
+			<div id="right" class="column">&nbsp;</div>
 
 		</div>
 	</div>

@@ -8,17 +8,21 @@
 <html>
 <head>
 <title>Tutte le attività</title>
+<!-- Common head lines -->
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
+		<!-- Banner -->
 		<%=banner()%>
+		
+		<!-- Landmarks -->
 		<%=landmarks("attività")%>
 
-		<!-- content -->
 		<div id="main">
 			<div id="left" class="column">&nbsp;</div>
-
+			
+			<!-- Content -->
 			<div id="content">
 				<span id="orientation_info"> <a href="/activities"
 					class="entry">Attività</a> &gt;

@@ -8,18 +8,23 @@
 <html>
 <head>
 <title>Progetti</title>
+<!-- Common head lines -->
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
+		<!-- Banner -->
 		<%=banner()%>
+		<!-- Landmarks -->
 		<%=landmarks("progetti")%>
 
 		<div id="main">
 			<div id="left" class="column">&nbsp;</div>
 
+			<!-- Content -->
 			<div id="content">
 				<%
+					//If request contains a message to display, display it!
 					String msg = (String) request.getAttribute("msg");
 					if (msg != null) {
 						out.println(showMsg(msg));
@@ -56,7 +61,7 @@
 				</ul>
 			</div>
 
-			<div id="right" class="column"></div>
+			<div id="right" class="column">&nbsp;</div>
 
 		</div>
 	</div>

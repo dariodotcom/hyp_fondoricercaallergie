@@ -4,24 +4,33 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <%@include file="/common.jsp"%>
 
+<%
+	//Find out what to show
+	String view = (String) request.getAttribute("view");
+	boolean viewDoc = view != null && view.equals("doc");
+%>
+
 <!doctype html>
 <html>
 <head>
 <title>${project.name}</title>
+<!-- Common head -->
 <%=headContent()%>
 </head>
 <body>
 	<div id="container">
+		<!-- Common banner -->
 		<%=banner()%>
+
+		<!-- Landmarks -->
 		<%=landmarks("progetti")%>
+
 		<div id="main">
 			<div id="left" class="column">
+
+				<!-- Section -->
 				<div class="col_family">
 					<h4 class="col_header">Progetto</h4>
-					<%
-						String view = (String) request.getAttribute("view");
-						boolean viewDoc = view != null && view.equals("doc");
-					%>
 					<ul class="col_list">
 						<li selected="<%=!viewDoc%>"><a
 							href="/projects/project?id=${f:h(project.key)}"> Informazioni
@@ -33,6 +42,7 @@
 					</ul>
 				</div>
 
+				<!-- Transition links -->
 				<div class="col_family">
 					<h4 class="col_header">Eventi correlati</h4>
 					<ul class="col_list">
@@ -76,6 +86,7 @@
 				</div>
 			</div>
 
+			<!-- Content -->
 			<div id="content">
 				<span id="orientation_info"> <a class="entry"
 					href="/projects/">Progetti</a> &gt; <c:if
@@ -97,6 +108,7 @@
 				</c:choose>
 			</div>
 
+			<!-- Group Links -->
 			<div id="right" class="column">
 				<c:if test="${projectGroupNavType != null}">
 					<div class="col_family">
