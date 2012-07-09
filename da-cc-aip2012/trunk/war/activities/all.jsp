@@ -37,9 +37,8 @@
 					<c:otherwise>
 						<ul>
 							<c:forEach items="${activityList}" var="activity">
-								<li>${f:h(activity.name)} (<a
-									href="/activities/activity?id=${f:h(activity.key)}">view</a>)
-								</li>
+								<li><a href="/activities/activity?id=${f:h(activity.key)}">
+										${f:h(activity.name)} </a></li>
 							</c:forEach>
 						</ul>
 					</c:otherwise>
