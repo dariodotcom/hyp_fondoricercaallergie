@@ -7,7 +7,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Fondo per la lotta alle allergie</title>
+	<title>Fondo Ricerca per le allergie</title>
 	<%= headContent() %>
 </head>
 <body>
@@ -19,6 +19,7 @@
 				&nbsp;
 			</div>
 			
+			<!-- Page content -->
 			<div id="content">
 				<img src="/src/header.png"/>
 				<p>

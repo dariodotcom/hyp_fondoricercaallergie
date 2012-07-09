@@ -88,11 +88,11 @@
 				<c:choose>
 					<c:when test="${view=='doc'}">
 						<h2 class="content_section">Documentazione:</h2>
-						<p>${f:h(project.documentation)}</p>
+						<p>${project.documentation}</p>
 					</c:when>
 					<c:otherwise>
 						<h2 class="content_section">Informazioni generali:</h2>
-						<p>${f:h(project.generalInfo)}</p>
+						<p>${project.generalInfo}</p>
 					</c:otherwise>
 				</c:choose>
 			</div>
