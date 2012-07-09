@@ -7,6 +7,7 @@ public class IndexController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
+        /* Forward navigation to jsp page. */
         return forward("index.jsp");
     }
 }

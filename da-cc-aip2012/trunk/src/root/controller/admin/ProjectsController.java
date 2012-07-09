@@ -12,6 +12,7 @@ public class ProjectsController extends Controller {
         /* Put project types into request scope */
         requestScope("projectTypes", ProjectType.values());
         
+        /* Forward navigation to jsp page. */
         return forward("projects.jsp");
     }
 }

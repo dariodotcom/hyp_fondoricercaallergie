@@ -51,6 +51,7 @@ public class ActivityController extends Controller {
             //No GroupNav found in session; go on;
         }
         
+        /* Forward navigation to jsp page. */
         return forward("activity.jsp");
     }
 }

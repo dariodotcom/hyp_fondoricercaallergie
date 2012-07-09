@@ -49,7 +49,8 @@ public class ProjectController extends Controller {
         } catch (NullPointerException e) {
             // No GroupNav in session; go on.
         }
-
+        
+        /* Forward navigation to jsp page. */
         return forward("project.jsp");
     }
 }

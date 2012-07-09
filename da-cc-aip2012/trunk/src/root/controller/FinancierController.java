@@ -7,6 +7,7 @@ public class FinancierController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
+        /* Forward navigation to jsp page. */
         return forward("financier.jsp");
     }
 }

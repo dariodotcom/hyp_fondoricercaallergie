@@ -22,6 +22,7 @@ public class AllController extends Controller {
             new ProjectGroupNav("all", null, "/projects/all", "Tutti i progetti");
         g.updateSession(request.getSession());
         
+        /* Forward navigation to jsp page. */
         return forward("all.jsp");
     }
 }

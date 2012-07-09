@@ -29,6 +29,7 @@ public class AllController extends Controller {
                 "Tutte le attività");
         g.updateSession(request.getSession());
 
+        /* Forward navigation to jsp page. */
         return forward("all.jsp");
     }
 }

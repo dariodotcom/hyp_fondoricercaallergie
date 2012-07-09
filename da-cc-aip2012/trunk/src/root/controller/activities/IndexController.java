@@ -10,9 +10,10 @@ public class IndexController extends Controller {
     @Override
     public Navigation run() throws Exception {
         
-        /*Put activity type list in request*/
+        /* Put activity type list in request */
         requestScope("activityTypes", ActivityType.values());
         
+        /* Forward navigation to jsp page. */
         return forward("index.jsp");
     }
 }

@@ -15,6 +15,7 @@ public class IndexController extends Controller {
         requestScope("projectTypes", ProjectType.values());
         requestScope("projectYears", ProjectYear.values());
         
+        /* Forward navigation to jsp page. */
         return forward("/projects/index.jsp");
     }
 }

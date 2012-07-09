@@ -42,7 +42,8 @@ public class ByTypeController extends Controller {
         ProjectGroupNav g =
             new ProjectGroupNav(navType, navParam, navIndex, navDesc);
         g.updateSession(request.getSession());
-
+        
+        /* Forward navigation to jsp page. */
         return forward("byType.jsp");
     }
 }

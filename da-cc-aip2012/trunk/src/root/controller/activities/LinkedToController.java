@@ -67,6 +67,7 @@ public class LinkedToController extends Controller {
         ActivityGroupNav nav = new ActivityGroupNav(type, param, index, desc);
         nav.updateSession(s);
 
+        /* Forward navigation to jsp page. */
         return forward("linkedTo.jsp");
     }
 }
